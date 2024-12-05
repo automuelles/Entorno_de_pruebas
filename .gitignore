@@ -1,0 +1,13 @@
+# Ignorar la carpeta temp en la raíz del proyecto
+/temp/
+
+# Otras reglas de ejemplo
+/node_modules/
+.env
+.DS_Store
+/Firma/fpdf/
+/Firma/fpdi/
+/public/img/img Producto/
+/public/
+/Firma/imagenes_firmas/
+
