@@ -87,7 +87,7 @@ include '../app/models/includes/Guardar_Facturas.php';
                     <i class="fa-solid fa-check text-white"></i>
                 </div>
                 <!-- Etiqueta como enlace -->
-                <a href="#" class="text-sm text-gray-700 hover:underline">#</a>
+                <a href="#" class="text-sm text-gray-700 hover:underline">Ubicacion Mensajeros</a>
             </div>
             <div class="neumorphism p-4 text-center">
                 <!-- Icono-->
@@ -96,7 +96,7 @@ include '../app/models/includes/Guardar_Facturas.php';
                     <i class="fa-solid fa-magnifying-glass-dollar text-white"></i>
                 </div>
                 <!-- Etiqueta como enlace -->
-                <a href="#" class="text-sm text-gray-700 hover:underline">#</a>
+                <a href="#" class="text-sm text-gray-700 hover:underline">Historial Entregas</a>
             </div>
             <div class="neumorphism p-4 text-center">
                 <!-- Icono-->
@@ -105,15 +105,25 @@ include '../app/models/includes/Guardar_Facturas.php';
                     <i class="fa-solid fa-circle-exclamation text-white"></i>
                 </div>
                 <!-- Etiqueta como enlace -->
-                <a href="#" class="text-sm text-gray-700 hover:underline">#</a>
+                <a href="#" class="text-sm text-gray-700 hover:underline">Consolidado Mes</a>
             </div>
             <div class="neumorphism p-4 text-center">
-                <div class="neumorphism-icon w-10 h-10 bg-gray-400 rounded-full mx-auto mb-2"></div>
-                <p class="text-sm text-gray-700">#</p>
+                <!-- Icono-->
+                <div
+                    class="neumorphism-icon w-10 h-10 bg-blue-400 rounded-full mx-auto mb-2 flex items-center justify-center">
+                    <i class="fa-solid fa-circle-exclamation text-white"></i>
+                </div>
+                <!-- Etiqueta como enlace -->
+                <a href="#" class="text-sm text-gray-700 hover:underline">Consultar  Stock</a>
             </div>
             <div class="neumorphism p-4 text-center">
-                <div class="neumorphism-icon w-10 h-10 bg-teal-400 rounded-full mx-auto mb-2"></div>
-                <p class="text-sm text-gray-700">#</p>
+                <!-- Icono-->
+                <div
+                    class="neumorphism-icon w-10 h-10 bg-yellow-400 rounded-full mx-auto mb-2 flex items-center justify-center">
+                    <i class="fa-solid fa-circle-exclamation text-white"></i>
+                </div>
+                <!-- Etiqueta como enlace -->
+                <a href="#" class="text-sm text-gray-700 hover:underline">Cotizaciones</a>
             </div>
             <div class="neumorphism p-4 text-center">
                 <div class="neumorphism-icon w-10 h-10 bg-blue-400 rounded-full mx-auto mb-2"></div>
