@@ -122,8 +122,8 @@ include '../app/models/includes/Guardar_Facturas.php';
         </div>
     </div>
 
-    <!-- Footer Navigation -->
-    <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-lg">
+      <!-- Footer Navigation -->
+      <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-lg">
         <div class="flex justify-around py-2">
             <a href="../index.php" class="text-blue-500 text-center flex flex-col items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -138,13 +138,6 @@ include '../app/models/includes/Guardar_Facturas.php';
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
                 <span class="text-xs">Volver</span>
-            </a>
-            <a href="../Firma/Firma.php" class="text-gray-500 text-center flex flex-col items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                    class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-                </svg>
-                <span class="text-xs">Firma Facturas</span>
             </a>
             <a href="#" id="openModal" class="text-gray-500 text-center flex flex-col items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
