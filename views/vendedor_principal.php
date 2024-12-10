@@ -114,7 +114,7 @@ include '../app/models/includes/Guardar_Facturas.php';
                     <i class="fa-solid fa-circle-exclamation text-white"></i>
                 </div>
                 <!-- Etiqueta como enlace -->
-                <a href="#" class="text-sm text-gray-700 hover:underline">Consultar  Stock</a>
+                <a href="#" class="text-sm text-gray-700 hover:underline">Consultar Stock</a>
             </div>
             <div class="neumorphism p-4 text-center">
                 <!-- Icono-->
@@ -132,8 +132,8 @@ include '../app/models/includes/Guardar_Facturas.php';
         </div>
     </div>
 
-      <!-- Footer Navigation -->
-      <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-lg">
+    <!-- Footer Navigation -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-lg">
         <div class="flex justify-around py-2">
             <a href="../index.php" class="text-blue-500 text-center flex flex-col items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -163,8 +163,16 @@ include '../app/models/includes/Guardar_Facturas.php';
             <div class="bg-white rounded-lg shadow-lg max-w-sm w-full">
                 <!-- Contenido del modal -->
                 <div class="p-4">
-                    <h2 class="text-xl font-semibold text-gray-800">apps</h2>
-                    <p class="mt-2 text-gray-600">apps integradas</p>
+                    <h2 class="text-xl font-semibold text-gray-800">apps integradas</h2>
+                </div>
+                <div class="neumorphism p-4 text-center">
+                    <!-- Icono-->
+                    <div
+                        class="neumorphism-icon w-10 h-10 bg-yellow-400 rounded-full mx-auto mb-2 flex items-center justify-center">
+                        <i class="fa-solid fa-calculator text-white"></i>
+                    </div>
+                    <!-- Etiqueta como enlace -->
+                    <a href="../calculadora/calculadora.php" class="text-sm text-gray-700 hover:underline">Calculadora</a>
                 </div>
                 <!-- Footer del modal -->
                 <div class="flex justify-end p-4 border-t">
