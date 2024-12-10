@@ -71,7 +71,7 @@ if (!isset($_SESSION['autenticado']) || !$_SESSION['autenticado']) {
                     <i class="fa-solid fa-motorcycle text-white"></i>
                 </div>
                 <!-- Etiqueta como enlace -->
-                <a href="#" class="text-sm text-gray-700 hover:underline">Mensajero</a>
+                <a href="Mensajero.php" class="text-sm text-gray-700 hover:underline">Mensajero</a>
             </div>
             <div class="neumorphism p-4 text-center">
                 <!-- Icono de Bodega -->
