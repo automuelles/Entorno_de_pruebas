@@ -101,15 +101,20 @@ include '../app/models/includes/Guardar_Facturas.php';
             <div class="neumorphism p-4 text-center">
                 <!-- Icono-->
                 <div
-                    class="neumorphism-icon w-10 h-10 bg-red-400 rounded-full mx-auto mb-2 flex items-center justify-center">
+                    class="neumorphism-icon w-10 h-10 bg-yellow-400 rounded-full mx-auto mb-2 flex items-center justify-center">
                     <i class="fa-solid fa-circle-exclamation text-white"></i>
                 </div>
                 <!-- Etiqueta como enlace -->
                 <a href="#" class="text-sm text-gray-700 hover:underline">Historial pedidos</a>
             </div>
             <div class="neumorphism p-4 text-center">
-                <div class="neumorphism-icon w-10 h-10 bg-gray-400 rounded-full mx-auto mb-2"></div>
-                <p class="text-sm text-gray-700">#</p>
+                <!-- Icono-->
+                <div
+                    class="neumorphism-icon w-10 h-10 bg-red-400 rounded-full mx-auto mb-2 flex items-center justify-center">
+                    <i class="fa-solid fa-skull-crossbones text-white"></i>
+                </div>
+                <!-- Etiqueta como enlace -->
+                <a href="#" class="text-sm text-gray-700 hover:underline">Reporte Novedades</a>
             </div>
             <div class="neumorphism p-4 text-center">
                 <div class="neumorphism-icon w-10 h-10 bg-teal-400 rounded-full mx-auto mb-2"></div>

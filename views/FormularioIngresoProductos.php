@@ -1,4 +1,5 @@
 <?php
+session_start(); // Inicia la sesión
 if (!isset($_SESSION['autenticado']) || !$_SESSION['autenticado']) {
 }
 include '../app/models/includes/Guardar_Facturas.php'; 
