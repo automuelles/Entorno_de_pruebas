@@ -1,0 +1,24 @@
+net use
+
+net use * /delete
+
+\\SERVAUTOMUELLES\HgiNetERP\Temp\Documentos\dms\900950921\cia1\emp2\documentos\FacturaElectronica
+
+net use Z: \\SERVAUTOMUELLES\HgiNetERP\Temp\Documentos\dms\900950921\cia1\emp2\documentos\FacturaElectronica /user:DOMINIO\administrador "Auto3179ser2021*" /persistent:yes
+
+net use X: "\\Servautomuelles\informacion\MARKETING RUBEN\PUBLICACIONES\FOTOS DE PRODUCTOS" /user:DOMINIO\administrador "Auto3179ser2021*" /persistent:yes
+
+
+modificacion base de datos
+DISABLE TRIGGER TgHgiNet_tbldocumentos ON TblDocumentos;
+DISABLE TRIGGER TgAuditHgi_TblDocumentos ON TblDocumentos;
+
+
+UPDATE TblDocumentos
+SET StrReferencia1 = 'NuevoValorReferencia1',
+    StrReferencia3 = 'NuevoValorReferencia3'
+WHERE IntDocumento = 123;
+
+
+ENABLE TRIGGER TgHgiNet_tbldocumentos ON TblDocumentos;
+ENABLE TRIGGER TgAuditHgi_TblDocumentos ON TblDocumentos;

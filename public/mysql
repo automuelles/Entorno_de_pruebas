@@ -1,0 +1,54 @@
+Usuario root
+contraseña Automuelles2024*
+
+CREATE TABLE usuarios (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,       -- Identificador único para cada usuario con auto-incremento
+    email VARCHAR(50) NOT NULL UNIQUE,                -- Dirección de correo electrónico del usuario, única y obligatoria
+    password VARCHAR(255) NOT NULL,                   -- Contraseña del usuario, almacenada como una cadena de texto encriptada
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP     -- Fecha y hora de creación del registro, con valor por defecto de la fecha actual
+);
+
+ALTER TABLE usuarios
+ADD COLUMN nombre_usuario VARCHAR(100) DEFAULT '';
+
+ALTER TABLE usuarios
+ADD COLUMN rol VARCHAR(50) DEFAULT 'Ninguno';
+
+CREATE TABLE facturas_firmadas (
+    id INT AUTO_INCREMENT PRIMARY KEY,              -- Identificador único para cada registro
+    numero_factura VARCHAR(50) NOT NULL,            -- Número de la factura firmada, almacenado como una cadena de texto
+    pdf LONGTEXT NOT NULL,                          -- El contenido del PDF de la factura firmado, almacenado como texto largo (en formato base64 o similar)
+    usuario VARCHAR(50) NOT NULL,                   -- El nombre del usuario que firmó o subió la factura, almacenado como una cadena de texto
+    fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP       -- Fecha y hora en que se guardó el registro, automáticamente establece el valor actual
+);
+
+
+CREATE TABLE Facturas (
+    Id INT AUTO_INCREMENT PRIMARY KEY,  
+    StrUsuarioGra VARCHAR(255) NOT NULL,  
+    DatFecha1 DATETIME NOT NULL,         
+    IntTransaccion INT NOT NULL,         
+    IntDocumento VARCHAR(255) NOT NULL,
+    Estado VARCHAR(50) DEFAULT 'Pendiente'  
+);
+
+
+CREATE TABLE estados (
+    Id INT PRIMARY KEY AUTO_INCREMENT,
+    EstadoActual VARCHAR(50) NOT NULL,
+    FechaEstadoActual DATETIME NOT NULL,
+    NombreUsuario VARCHAR(100) NOT NULL,
+    IntDocumento INT NOT NULL,
+    IntTransaccion INT NOT NULL
+);
+
+CREATE TABLE productos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    referencia VARCHAR(50) NOT NULL,
+    nombre_producto VARCHAR(100) NOT NULL,
+    marca VARCHAR(50),
+    linea VARCHAR(50),
+    descripcion_producto TEXT,
+    especificaciones JSON,
+    imagen VARCHAR(255)
+)
