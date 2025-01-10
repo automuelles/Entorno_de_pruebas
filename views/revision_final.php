@@ -2,8 +2,38 @@
 session_start(); // Inicia la sesión
 
 if (!isset($_SESSION['autenticado']) || !$_SESSION['autenticado']) {
-   
 }
+   // Conexión a la base de datos
+$host = 'localhost';
+$db = 'automuelles';
+$user = 'root';
+$pass = 'Automuelles2024*';
+
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Error de conexión: " . $e->getMessage());
+}
+
+// Recuperar el nombre de usuario desde la sesión
+$nombre_usuario = $_SESSION['usuario']; // Se asume que 'usuario' está en la sesión
+
+// Consultar el rol del usuario en la base de datos
+$sql = "SELECT rol FROM usuarios WHERE nombre_usuario = :nombre_usuario";
+$stmt = $pdo->prepare($sql);
+$stmt->bindParam(':nombre_usuario', $nombre_usuario);
+$stmt->execute();
+
+$usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+// Verificar si el rol es válido
+if (!$usuario || !in_array($usuario['rol'], ['Admin', 'JefeBodega'])) {
+    // Si el rol no es Admin o Bodega, redirige a la página principal
+    header("Location: paginaPrincipal.php");
+    exit();
+}
+
 include '../app/controllers/revsion_final.php'; 
 ?>
 
