@@ -87,7 +87,7 @@ include '../app/models/includes/Guardar_Facturas.php';
                     <i class="fa-solid fa-check text-white"></i>
                 </div>
                 <!-- Etiqueta como enlace -->
-                <a href="#" class="text-sm text-gray-700 hover:underline">#</a>
+                <a href="#" class="text-sm text-gray-700 hover:underline">Historial Pedidos</a>
             </div>
             <div class="neumorphism p-4 text-center">
                 <!-- Icono-->
