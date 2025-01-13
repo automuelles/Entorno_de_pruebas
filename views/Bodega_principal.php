@@ -30,7 +30,7 @@ $stmt->execute();
 $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
 // Verificar si el rol es válido
-if (!$usuario || !in_array($usuario['rol'], ['Admin', 'Bodega'])) {
+if (!$usuario || !in_array($usuario['rol'], ['Admin', 'Bodega', 'JefeBodega'])) {
     // Si el rol no es Admin o Bodega, redirige a la página principal
     header("Location: paginaPrincipal.php");
     exit();
@@ -105,11 +105,16 @@ include '../app/models/includes/Guardar_Facturas.php';
                     <i class="fa-solid fa-circle-exclamation text-white"></i>
                 </div>
                 <!-- Etiqueta como enlace -->
-                <a href="#" class="text-sm text-gray-700 hover:underline">Marcar Pendientes</a>
+                <a href="MarcarPendientes.php" class="text-sm text-gray-700 hover:underline">Marcar Pendientes</a>
             </div>
             <div class="neumorphism p-4 text-center">
-                <div class="neumorphism-icon w-10 h-10 bg-gray-400 rounded-full mx-auto mb-2"></div>
-                <p class="text-sm text-gray-700">#</p>
+                <!-- Icono de vendedor -->
+                <div
+                    class="neumorphism-icon w-10 h-10 bg-gray-400 rounded-full mx-auto mb-2 flex items-center justify-center">
+                    <i class="fa-solid fa-circle-exclamation text-white"></i>
+                </div>
+                <!-- Etiqueta como enlace -->
+                <a href="MarcarPendientes.php" class="text-sm text-gray-700 hover:underline">Historial Pedidos</a>
             </div>
             <div class="neumorphism p-4 text-center">
                 <div class="neumorphism-icon w-10 h-10 bg-teal-400 rounded-full mx-auto mb-2"></div>
