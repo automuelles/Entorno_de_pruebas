@@ -73,64 +73,9 @@ include '../app/models/includes/Guardar_Facturas.php';
             echo "Usuario"; 
         }
         ?>
-        <p class="text-gray-600 text-sm">Area de Bodega</p>
+        <p class="text-gray-600 text-sm">Area de Devoluciones</p>
     </div>
-
-    <!-- Features Section -->
-    <div class="w-full max-w-xs">
-        <h2 class="text-center text-lg font-semibold text-gray-700 mb-4">Modulos</h2>
-        <div class="grid grid-cols-3 gap-4">
-            <div class="neumorphism p-4 text-center">
-                <!-- Icono de vendedor -->
-                <div
-                    class="neumorphism-icon w-10 h-10 bg-green-400 rounded-full mx-auto mb-2 flex items-center justify-center">
-                    <i class="fa-solid fa-check text-white"></i>
-                </div>
-                <!-- Etiqueta como enlace -->
-                <a href="./separar_pedido.php" class="text-sm text-gray-700 hover:underline">Separar Pedido</a>
-            </div>
-            <div class="neumorphism p-4 text-center">
-                <!-- Icono de vendedor -->
-                <div
-                    class="neumorphism-icon w-10 h-10 bg-purple-400 rounded-full mx-auto mb-2 flex items-center justify-center">
-                    <i class="fa-solid fa-magnifying-glass-dollar text-white"></i>
-                </div>
-                <!-- Etiqueta como enlace -->
-                <a href="./revision_final.php" class="text-sm text-gray-700 hover:underline">Revision Final</a>
-            </div>
-            <div class="neumorphism p-4 text-center">
-                <!-- Icono de vendedor -->
-                <div
-                    class="neumorphism-icon w-10 h-10 bg-yellow-400 rounded-full mx-auto mb-2 flex items-center justify-center">
-                    <i class="fa-solid fa-circle-exclamation text-white"></i>
-                </div>
-                <!-- Etiqueta como enlace -->
-                <a href="MarcarPendientes.php" class="text-sm text-gray-700 hover:underline">Marcar Pendientes</a>
-            </div>
-            <div class="neumorphism p-4 text-center">
-                <!-- Icono de vendedor -->
-                <div
-                    class="neumorphism-icon w-10 h-10 bg-gray-400 rounded-full mx-auto mb-2 flex items-center justify-center">
-                    <i class="fa-solid fa-circle-exclamation text-white"></i>
-                </div>
-                <!-- Etiqueta como enlace -->
-                <a href="MarcarPendientes.php" class="text-sm text-gray-700 hover:underline">Historial Pedidos</a>
-            </div>
-            <div class="neumorphism p-4 text-center">
-                <!-- Icono de vendedor -->
-                <div
-                    class="neumorphism-icon w-10 h-10 bg-teal-400 rounded-full mx-auto mb-2 flex items-center justify-center">
-                    <i class="fa-solid fa-notes-medical text-white"></i>
-                </div>
-                <!-- Etiqueta como enlace -->
-                <a href="DevolucionesMercancia.php" class="text-sm text-gray-700 hover:underline">Devoluciones Mercancia</a>
-            </div>
-            <div class="neumorphism p-4 text-center">
-                <div class="neumorphism-icon w-10 h-10 bg-blue-400 rounded-full mx-auto mb-2"></div>
-                <p class="text-sm text-gray-700">#</p>
-            </div>
-        </div>
-    </div>
+area de trabajo
 
     <!-- Footer Navigation -->
     <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-lg">
