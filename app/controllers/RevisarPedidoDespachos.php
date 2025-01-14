@@ -62,7 +62,8 @@ $query = "
         d.StrReferencia3
     FROM TblDocumentos d
     WHERE d.IntTransaccion = :transaccion AND d.IntDocumento = :documento
-    AND d.StrReferencia1 IS NOT NULL AND d.StrReferencia3 IS NOT NULL
+    AND d.StrReferencia1 IS NOT NULL AND d.StrReferencia1 LIKE '%[^ 0-9a-zA-Z]%' 
+    AND d.StrReferencia3 IS NOT NULL AND d.StrReferencia3 LIKE '%[^ 0-9a-zA-Z]%'  
     ORDER BY d.IntDocumento";
 
 // Preparar la consulta SQL
