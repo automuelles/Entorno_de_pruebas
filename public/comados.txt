@@ -30,3 +30,7 @@ USE mysql;
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'Automuelles2024*';
 FLUSH PRIVILEGES;
 mysql -u root -p
+
+
+revisar que este archivo este en php.informacion
+extension=php_sqlsrv.dll
