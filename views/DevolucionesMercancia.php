@@ -1,43 +1,10 @@
 <?php
 session_start(); // Inicia la sesión
 
-// Verifica si el usuario está autenticado
 if (!isset($_SESSION['autenticado']) || !$_SESSION['autenticado']) {
+   
 }
-
-// Conexión a la base de datos
-$host = 'localhost';
-$db = 'automuelles';
-$user = 'root';
-$pass = 'Automuelles2024*';
-
-try {
-    $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Error de conexión: " . $e->getMessage());
-}
-
-// Recuperar el nombre de usuario desde la sesión
-$nombre_usuario = $_SESSION['usuario']; // Se asume que 'usuario' está en la sesión
-
-// Consultar el rol del usuario en la base de datos
-$sql = "SELECT rol FROM usuarios WHERE nombre_usuario = :nombre_usuario";
-$stmt = $pdo->prepare($sql);
-$stmt->bindParam(':nombre_usuario', $nombre_usuario);
-$stmt->execute();
-
-$usuario = $stmt->fetch(PDO::FETCH_ASSOC);
-
-// Verificar si el rol es válido
-if (!$usuario || !in_array($usuario['rol'], ['Admin', 'Bodega', 'JefeBodega'])) {
-    // Si el rol no es Admin o Bodega, redirige a la página principal
-    header("Location: paginaPrincipal.php");
-    exit();
-}
-
-// Incluye el archivo Guardar_Facturas.php si el usuario tiene el rol adecuado
-include '../app/models/includes/Guardar_Facturas.php';
+include '../app/controllers/DevolucionesMercancia.php'; 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +14,8 @@ include '../app/models/includes/Guardar_Facturas.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina Bodega Automuelles</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
     /* Neumorphism effect */
     .neumorphism {
@@ -75,7 +43,52 @@ include '../app/models/includes/Guardar_Facturas.php';
         ?>
         <p class="text-gray-600 text-sm">Area de Devoluciones</p>
     </div>
-area de trabajo
+   <!-- Features Section -->
+   <div class="w-full max-w-xs">
+        <h2 class="text-center text-lg font-semibold text-gray-700 mb-4">Pedidos Pendientes</h2>
+        <div class="container mt-4">
+            <?php foreach ($data as $key => $group) : ?>
+            <div class="card mb-3">
+                <div class="card-header">
+                    <h5>Transacción: <?php echo htmlspecialchars($group['IntTransaccion']); ?> | Factura:
+                        <?php echo htmlspecialchars($group['IntDocumento']); ?></h5>
+                    <button class="btn btn-primary btn-block"
+                        onclick="confirmSepararPedido('<?php echo htmlspecialchars($group['IntTransaccion']); ?>', '<?php echo htmlspecialchars($group['IntDocumento']); ?>')">Separar
+                        Pedido</button>
+                </div>
+                <div class="card-body">
+                    <p><strong>Fecha de Registro:</strong> <?php echo htmlspecialchars($group['FechaRegistro']); ?></p>
+                    <p><strong>Creado Por:</strong> <?php echo htmlspecialchars($group['StrUsuarioGra']); ?></p>
+
+                    <!-- Hacer la tabla desplazable en pantallas pequeñas -->
+                    <div class="table-responsive">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th># Transaccion</th>
+                                    <th># Documento</th>
+                                    <th>Fecha</th>
+                                    <th>Vendedor</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($group['Detalles'] as $index => $detalle) : ?>
+                                <tr>
+                                    <td><?php echo htmlspecialchars($detalle['IntTransaccion']); ?></td>
+                                    <td><?php echo htmlspecialchars($detalle['IntDocumento'], 2); ?></td>
+                                    <td><?php echo htmlspecialchars($detalle['DatFecha1']); ?></td>
+                                    <td><?php echo htmlspecialchars($detalle['StrUsuarioGra']); ?></td>
+                                </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+
 
     <!-- Footer Navigation -->
     <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-lg">
@@ -119,6 +132,9 @@ area de trabajo
             </div>
         </div>
     </nav>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
     const openModal = document.getElementById('openModal');
     const closeModal = document.getElementById('closeModal');
