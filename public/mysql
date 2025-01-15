@@ -2,10 +2,10 @@ Usuario root
 contraseña Automuelles2024*
 
 CREATE TABLE usuarios (
-    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,       -- Identificador único para cada usuario con auto-incremento
-    email VARCHAR(50) NOT NULL UNIQUE,                -- Dirección de correo electrónico del usuario, única y obligatoria
-    password VARCHAR(255) NOT NULL,                   -- Contraseña del usuario, almacenada como una cadena de texto encriptada
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP     -- Fecha y hora de creación del registro, con valor por defecto de la fecha actual
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,      
+    email VARCHAR(50) NOT NULL UNIQUE,               
+    password VARCHAR(255) NOT NULL,                   
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP   
 );
 
 ALTER TABLE usuarios
@@ -15,11 +15,11 @@ ALTER TABLE usuarios
 ADD COLUMN rol VARCHAR(50) DEFAULT 'Ninguno';
 
 CREATE TABLE facturas_firmadas (
-    id INT AUTO_INCREMENT PRIMARY KEY,              -- Identificador único para cada registro
-    numero_factura VARCHAR(50) NOT NULL,            -- Número de la factura firmada, almacenado como una cadena de texto
-    pdf LONGTEXT NOT NULL,                          -- El contenido del PDF de la factura firmado, almacenado como texto largo (en formato base64 o similar)
-    usuario VARCHAR(50) NOT NULL,                   -- El nombre del usuario que firmó o subió la factura, almacenado como una cadena de texto
-    fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP       -- Fecha y hora en que se guardó el registro, automáticamente establece el valor actual
+    id INT AUTO_INCREMENT PRIMARY KEY,            
+    numero_factura VARCHAR(50) NOT NULL,           
+    pdf LONGTEXT NOT NULL,                          
+    usuario VARCHAR(50) NOT NULL,                   
+    fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP      
 );
 
 
