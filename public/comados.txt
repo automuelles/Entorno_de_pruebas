@@ -22,3 +22,11 @@ WHERE IntDocumento = 123;
 
 ENABLE TRIGGER TgHgiNet_tbldocumentos ON TblDocumentos;
 ENABLE TRIGGER TgAuditHgi_TblDocumentos ON TblDocumentos;
+
+*****actualizar contarseña del root*********
+cd C:\xampp\mysql\bin
+mysql -u root
+USE mysql;
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'Automuelles2024*';
+FLUSH PRIVILEGES;
+mysql -u root -p
