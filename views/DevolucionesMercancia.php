@@ -4,7 +4,8 @@ session_start(); // Inicia la sesión
 if (!isset($_SESSION['autenticado']) || !$_SESSION['autenticado']) {
    
 }
-include '../app/controllers/DevolucionesMercancia.php'; 
+include '../app/models/includes/Guardar_Notas.php'; 
+include '../app/controllers/DevolucionesMercancia.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

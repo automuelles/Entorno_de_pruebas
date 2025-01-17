@@ -45,6 +45,7 @@ include '../app/models/includes/Guardar_Facturas.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="30">
     <title>Pagina Bodega Automuelles</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -59,6 +60,23 @@ include '../app/models/includes/Guardar_Facturas.php';
     .neumorphism-icon {
         box-shadow: 6px 6px 12px #bebebe, -6px -6px 12px #ffffff;
     }
+    .notification {
+            position: relative;
+            display: inline-block;
+        }
+        .notification {
+            position: relative;
+            display: inline-block;
+        }
+        .notification .badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            padding: 5px 10px;
+            border-radius: 50%;
+            background: red;
+            color: white;
+        }
     </style>
 </head>
 
@@ -75,7 +93,7 @@ include '../app/models/includes/Guardar_Facturas.php';
         ?>
         <p class="text-gray-600 text-sm">Area de Bodega</p>
     </div>
-
+ 
     <!-- Features Section -->
     <div class="w-full max-w-xs">
         <h2 class="text-center text-lg font-semibold text-gray-700 mb-4">Modulos</h2>

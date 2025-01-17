@@ -54,7 +54,7 @@ FROM TblDetalleDocumentos d
 LEFT JOIN TblProductos p ON d.StrProducto = p.StrIdProducto
 LEFT JOIN TblDocumentos doc ON d.IntTransaccion = doc.IntTransaccion AND d.IntDocumento = doc.IntDocumento
 WHERE CONVERT(DATE, d.DatFecha1) = CONVERT(DATE, GETDATE())
-AND d.IntTransaccion IN (40, 42, 88, 90)
+AND d.IntTransaccion IN (86, 92, 105, 82, 89)
 ORDER BY d.IntDocumento";
 $stmt = $conn->prepare($query);
 $stmt->execute();
@@ -72,10 +72,10 @@ if (!empty($facturasAgrupadas)) {
         foreach ($facturas as $factura) {
             // Verificar que IntDocumento no contenga el símbolo "-" y que el registro no exista
             if (strpos($factura['IntDocumento'], '-') === false) {
-                // Verificar si el registro ya existe
-                $sql_check = "SELECT COUNT(*) FROM Facturas WHERE IntDocumento = ? AND IntTransaccion = ?";
+                // Verificar si el registro ya existe en la tabla `Notas`
+                $sql_check = "SELECT COUNT(*) FROM Notas WHERE IntDocumento = ? AND IntTransaccion = ?";
                 $stmt_check = $mysqli->prepare($sql_check);
-                $stmt_check->bind_param("si", $factura['IntDocumento'], $factura['IntTransaccion']);
+                $stmt_check->bind_param("ii", $factura['IntDocumento'], $factura['IntTransaccion']);
                 $stmt_check->execute();
                 $stmt_check->bind_result($count);
                 $stmt_check->fetch();
@@ -97,7 +97,9 @@ if (!empty($facturasAgrupadas)) {
                         $stmt_insert->execute();
                     } catch (mysqli_sql_exception $e) {
                         // Manejo de errores en la inserción
-                        // Aquí puedes manejar errores, pero evita imprimir o mostrar información al usuario
+                        error_log("Error al insertar en Notas: " . $e->getMessage());
+                    } finally {
+                        $stmt_insert->close();
                     }
                 }
             }

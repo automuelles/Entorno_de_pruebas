@@ -4,7 +4,8 @@ session_start(); // Inicia la sesión
 if (!isset($_SESSION['autenticado']) || !$_SESSION['autenticado']) {
    
 }
-include '../app/controllers/separar_pedido.php'; 
+include '../app/controllers/separar_pedido.php';
+include '../app/models/includes/Guardar_Facturas.php'; 
 ?>
 
 
@@ -14,6 +15,7 @@ include '../app/controllers/separar_pedido.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="30">
     <title>Pagina Bodega Automuelles</title>
     <script src="https://cdn.tailwindcss.com"></script>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">

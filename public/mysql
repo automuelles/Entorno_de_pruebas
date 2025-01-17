@@ -51,4 +51,13 @@ CREATE TABLE productos (
     descripcion_producto TEXT,
     especificaciones JSON,
     imagen VARCHAR(255)
-)
+);
+
+CREATE TABLE Notas (
+    Id INT AUTO_INCREMENT PRIMARY KEY,  
+    StrUsuarioGra VARCHAR(255) NOT NULL,  
+    DatFecha1 DATETIME NOT NULL,         
+    IntTransaccion INT NOT NULL,         
+    IntDocumento VARCHAR(255) NOT NULL,
+    Estado VARCHAR(50) DEFAULT 'Pendiente'  
+);

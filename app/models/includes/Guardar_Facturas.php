@@ -104,8 +104,34 @@ if (!empty($facturasAgrupadas)) {
         }
     }
 }
+// Consultar el número de facturas pendientes
+$sqlPendientes = "SELECT COUNT(*) AS totalPendientes FROM Facturas WHERE Estado = 'Pendiente'";
+$resultPendientes = $mysqli->query($sqlPendientes);
+
+if ($resultPendientes) {
+    $totalPendientes = $resultPendientes->fetch_assoc()['totalPendientes'];
+
+    // Mostrar el ícono de campana y el número de facturas pendientes
+    echo "
+    <div style='display: flex; align-items: center;'>
+        <i class='fa fa-bell' style='font-size: 30px; margin-right: 10px; color: #f39c12;'></i>
+        <span style='font-size: 20px; font-weight: bold;'>$totalPendientes</span>
+    </div>";
+
+    // Reproducir el audio mediante JavaScript
+    echo "
+    <script>
+        const audio = new Audio('ruta/del/audio/notification.mp3');
+        audio.play();
+    </script>";
+} else {
+    // Si ocurre un error, muestra un valor predeterminado
+    echo "0";
+}
 
 // Cerrar la conexión a la base de datos
 $mysqli->close();
 $conn = null; // Cerrar conexión PDO
 ?>
+<!-- Agregar enlace para cargar Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
