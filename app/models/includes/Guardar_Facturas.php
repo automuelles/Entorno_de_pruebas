@@ -121,14 +121,15 @@ if ($resultPendientes) {
     // Reproducir el audio mediante JavaScript
     echo "
     <script>
-        const audio = new Audio('ruta/del/audio/notification.mp3');
-        audio.play();
+        const audio = new Audio('c:\xampp\htdocs\pedidos\public\audio\audio.mp3'); // Usar ruta absoluta desde el servidor
+        audio.play().catch(function(error) {
+            console.log('Error al reproducir el audio: ' + error);
+        });
     </script>";
 } else {
     // Si ocurre un error, muestra un valor predeterminado
     echo "0";
 }
-
 // Cerrar la conexión a la base de datos
 $mysqli->close();
 $conn = null; // Cerrar conexión PDO

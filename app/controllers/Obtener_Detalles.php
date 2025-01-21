@@ -31,7 +31,8 @@ $query = "
 SELECT 
     d.IntTransaccion, 
     d.IntDocumento, 
-    d.StrProducto, 
+    d.StrProducto,
+    p.StrDescripcion, 
     p.StrParam1, 
     d.IntCantidad, 
     d.StrUnidad
@@ -60,6 +61,7 @@ try {
             // Si no existe el producto en el array, inicializarlo
             $agrupados[$producto] = [
                 'Producto' => $producto,
+                'Descripción' => $row['StrDescripcion'],
                 'Parámetros' => [],
                 'Cantidades' => [],
                 'Unidades' => $row['StrUnidad']
@@ -79,6 +81,7 @@ try {
             echo '<div class="modal-item">';
             echo '<input type="checkbox" id="opcion1"><label for="opcion1"></label>';
             echo '<h5>Producto: </h5>' . htmlspecialchars($detalles['Producto']);
+            echo '<h5>Descripción: </h5>' . htmlspecialchars($detalles['Descripción']);
             echo '<h5>Parámetros: </h5>' . htmlspecialchars(implode(', ', $detalles['Parámetros']));
             echo '<h5>Cantidades: </h5>' . htmlspecialchars(implode(', ', $detalles['Cantidades']));
             echo '<h5>Unidad: </h5>' . htmlspecialchars($detalles['Unidades']);
