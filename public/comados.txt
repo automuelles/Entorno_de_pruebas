@@ -17,7 +17,7 @@ DISABLE TRIGGER TgAuditHgi_TblDocumentos ON TblDocumentos;
 UPDATE TblDocumentos
 SET StrReferencia1 = 'NuevoValorReferencia1',
     StrReferencia3 = 'NuevoValorReferencia3'
-WHERE IntDocumento = 123;
+WHERE IntDocumento = 94725;
 
 
 ENABLE TRIGGER TgHgiNet_tbldocumentos ON TblDocumentos;
