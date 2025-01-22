@@ -84,7 +84,7 @@ include '../app/controllers/ComenzarRevisionDespachos.php';
                     <input type="hidden" name="documento" value="<?php echo htmlspecialchars($documento); ?>">
                     <button type="submit" class="btn btn-primary btn-block">Guardar</button>
                 </form>
-                <a href="./RevisarPedidoDespachos.php" class="btn btn-secondary btn-block w-50 ml-2">Volver</a>
+                <a href="./AsignarMensajeroPrincipal.php" class="btn btn-secondary btn-block w-50 ml-2">Volver</a>
             </div>
         </div>
     </div>
@@ -98,7 +98,7 @@ include '../app/controllers/ComenzarRevisionDespachos.php';
                 </svg>
                 <span class="text-xs">Salir</span>
             </a>
-            <a href="./RevisarPedidoDespachos.php" class="text-gray-500 text-center flex flex-col items-center">
+            <a href="./AsignarMensajeroPrincipal.php" class="text-gray-500 text-center flex flex-col items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                     class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
