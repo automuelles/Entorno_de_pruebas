@@ -121,7 +121,7 @@ if ($resultPendientes) {
     // Reproducir el audio mediante JavaScript
     echo "
     <script>
-        const audio = new Audio('c:\xampp\htdocs\pedidos\public\audio\audio.mp3'); // Usar ruta absoluta desde el servidor
+        const audio = new Audio('../../../public/audio/audio.mp3'); // Usar ruta absoluta desde el servidor
         audio.play().catch(function(error) {
             console.log('Error al reproducir el audio: ' + error);
         });
